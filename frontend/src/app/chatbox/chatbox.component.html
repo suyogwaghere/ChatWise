@@ -1,0 +1,169 @@
+<div class="body">
+  <div class="container">
+    <header class="chatbox-header">
+      <img class="profile-pic" src="assets/images/dp.jpg" alt="" />
+      <span class="name text-capitalize">{{ receiver.userName }}</span
+      ><br />
+      <!-- <h6 class="online">{{onlineStatus}}</h6> -->
+      <button
+        class="option"
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+        matTooltip="Options"
+      >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu class="mat-menu" #menu="matMenu">
+        <button
+          mat-menu-item
+          (click)="muteUser()"
+          *ngIf="mutedUsers.indexOf(userDetails.recipient) === -1"
+        >
+          <mat-icon>volume_off</mat-icon>
+          <span>Mute</span>
+        </button>
+
+        <button
+          mat-menu-item
+          (click)="unMuteUser()"
+          *ngIf="mutedUsers.includes(userDetails.recipient)"
+        >
+          <mat-icon>volume_up</mat-icon>
+          <span>Unmute</span>
+        </button>
+
+        <button
+          mat-menu-item
+          (click)="blockUser()"
+          *ngIf="blockedUsers.indexOf(userDetails.recipient) === -1"
+        >
+          <mat-icon>block</mat-icon>
+          <span>Block</span>
+        </button>
+        <button
+          mat-menu-item
+          (click)="unblockUser()"
+          *ngIf="blockedUsers.includes(userDetails.recipient)"
+        >
+          <mat-icon>lock_open</mat-icon>
+          <span>Unblock</span>
+        </button>
+        <button mat-menu-item routerLink="/home/default">
+          <mat-icon>close</mat-icon>
+          <span>Close chat</span>
+        </button>
+      </mat-menu>
+    </header>
+    <div class="chatbox-body" #scrollMe>
+      <div class="messages" *ngFor="let message of messages">
+        <div class="receive-msg" *ngIf="message.receiver === msg.sender">
+          <p class="msg-para" [(ngModel)]="message.msg" ngDefaultControl>
+            {{ message.msg }}
+          </p>
+          <mat-icon
+            [cdkCopyToClipboard]="message.msg"
+            matTooltip="copy text"
+            class="copy"
+            >content_copy</mat-icon
+          >
+        </div>
+        <div class="send-container">
+          <div class="send-msg" *ngIf="message.sender === msg.sender">
+            <mat-icon
+              matTooltip="copy text"
+              [cdkCopyToClipboard]="message.msg"
+              class="copy"
+              >content_copy</mat-icon
+            >
+            <p class="msg-para" [(ngModel)]="message.msg" ngDefaultControl>
+              {{ message.msg }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chatbox-footer">
+      <!-- <form class="chatbox-footer" #message="ngForm">
+        <input
+          *ngIf="
+            !blockedUsers.includes(userDetails.recipient) &&
+            !recipientBlockedUsers.includes(userDetails.sender)
+          "
+          class="msg formControl"
+          type="text"
+          placeholder="Type a message"
+          name="mssg"
+          #mssg="ngModel"
+          [(ngModel)]="newMessage"
+          autocomplete="off"
+        />
+        <mat-icon
+          *ngIf="
+            !blockedUsers.includes(userDetails.recipient) &&
+            !recipientBlockedUsers.includes(userDetails.sender)
+          "
+          class="send"
+          (click)="sendMsg()"
+          >send</mat-icon
+        >
+        <h5 *ngIf="blockedUsers.includes(userDetails.recipient)">
+          You blocked this contact !
+        </h5>
+        <h5
+          *ngIf="
+            recipientBlockedUsers.includes(userDetails.sender) &&
+            !blockedUsers.includes(userDetails.recipient)
+          "
+        >
+          You have been blocked !
+        </h5>
+      </form> -->
+      <!-- start -->
+      <div class="row h-20 m-2">
+        <form class="chatbox-footer" #message="ngForm">
+          <div class="input-group flex-nowrap my-2">
+            <input
+              *ngIf="
+                !blockedUsers.includes(userDetails.recipient) &&
+                !recipientBlockedUsers.includes(userDetails.sender)
+              "
+              class="msg formControl"
+              type="text"
+              placeholder="Type a message"
+              name="mssg"
+              #mssg="ngModel"
+              [(ngModel)]="newMessage"
+              autocomplete="off"
+            />
+            <!-- send -->
+            <button
+              class="btn btn-outline-secondary"
+              type="button"
+              id="button-addon2"
+              *ngIf="
+                !blockedUsers.includes(userDetails.recipient) &&
+                !recipientBlockedUsers.includes(userDetails.sender)
+              "
+              (click)="sendMsg()"
+            >
+              Send
+            </button>
+          </div>
+          <h5 *ngIf="blockedUsers.includes(userDetails.recipient)">
+            You blocked this contact !
+          </h5>
+          <h5
+            *ngIf="
+              recipientBlockedUsers.includes(userDetails.sender) &&
+              !blockedUsers.includes(userDetails.recipient)
+            "
+          >
+            You have been blocked !
+          </h5>
+        </form>
+      </div>
+      <!-- end -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,128 @@
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+}
+
+.body {
+
+    background-image: url('../../assets/images/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.head {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.head h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #6f42c1;
+
+}
+
+.head h5 {
+    font-size: 0.8rem;
+}
+
+.main {
+    /* border: 1px solid black; */
+    margin-top: 15vh;
+    height: 70vh;
+    padding: 20px;
+}
+
+.hide-button {
+    border: none;
+    background: none;
+}
+
+mat-form-field {
+    width: 90%;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+
+.form {
+    text-align: center;
+}
+
+.btn {
+    width: 90%;
+    margin-top: 10px;
+    height: 2.5rem;
+    background-color: #6f42c1;
+}
+
+.btn:hover {
+    background-color: #6610f2;
+}
+
+.para {
+    font-size: .8rem;
+    margin-top: 20px;
+    text-align: start;
+    margin-left: 5%;
+}
+
+.form-control:focus {
+    /* border-color: #ced4da; */
+    border: none !important;
+    /* if you want to remove borders at all*/
+    /* outline: none !important; */
+    box-shadow: none !important;
+}
+
+span {
+    font-size: smaller;
+    color: #CF0A0A;
+}
+
+.error {
+    text-align: start;
+    margin-left: 5%;
+    position: relative;
+    bottom: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+    .body {
+        background-image: url('../../assets/images/bg.jpg');
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .head h5 {
+        font-size: 0.7rem;
+    }
+
+    .main {
+        margin-top: 10vh;
+    }
+
+    span {
+        font-size: x-small;
+        /* color: #CF0A0A; */
+    }
+
+}
+
+@media only screen and (max-width: 835px) {
+    .body {
+        background-image: url('../../assets/images/bg.jpg');
+        /* opacity: 10; */
+        /* background: rgb(0 0 0 / .8), rgb(0 0 0 / 0) !important; */
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+/* @media only screen and (min-width: 836px) {} */

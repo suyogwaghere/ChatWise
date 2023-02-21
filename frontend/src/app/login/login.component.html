@@ -1,0 +1,90 @@
+<body class="p-1 body">
+  <div class="row w-75 mx-auto justify-content-start align-items-start g-2">
+    <div class="col">
+      <img src="../assets/signup/logo.png" alt="" />
+    </div>
+  </div>
+  <div class="d-flex row mx-auto justify-content-center w-75">
+    <div class="col-5 d-none d-sm-block">
+      <div class="">
+        <img
+          class="card-img-top"
+          src="../assets/signup/Rectangle 2.png"
+          alt=""
+          height="542"
+          width="200"
+        />
+      </div>
+    </div>
+
+    <div class="col mx-4 px-5">
+      <div class="head">
+        <h1>Sign In</h1>
+        <!-- <h5>Welcome back! Please enter your details</h5> -->
+      </div>
+      <div class="form">
+        <div class="inputs">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  class="form-control"
+                  formControlName="email"
+                /> </mat-form-field
+              ><br />
+              <div class="error">
+                <span *ngIf="submitted && f.email.errors?.['email']"
+                  >Enter valid email</span
+                >
+                <span *ngIf="submitted && f.email.errors?.['required']"
+                  >Email required</span
+                >
+              </div>
+            </div>
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input
+                  matInput
+                  [type]="hide ? 'password' : 'text'"
+                  class="form-control"
+                  formControlName="password"
+                />
+                <button
+                  class="hide-button"
+                  mat-icon-button
+                  matSuffix
+                  (click)="hide = !hide"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide"
+                >
+                  <mat-icon>{{
+                    hide ? "visibility_off" : "visibility"
+                  }}</mat-icon>
+                </button> </mat-form-field
+              ><br />
+              <div class="error">
+                <span *ngIf="submitted && f.password.errors?.['required']"
+                  >Password required</span
+                >
+                <span>{{ status }}</span>
+              </div>
+            </div>
+            <div class="forgot">
+              <a href="">Forgot password?</a>
+            </div>
+            <button class="btn btn-primary">Login</button>
+          </form>
+        </div>
+        <div class="para">
+          <p>Don't have an account?<a routerLink="/signup"> Sign up</a></p>
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
+  </div>
+  <!-- <main class="form-signin w-25 mx-auto"></main> -->
+</body>

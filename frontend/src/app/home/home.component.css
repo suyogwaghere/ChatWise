@@ -1,0 +1,211 @@
+.body {
+
+    background-image: url('../../assets/images/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: auto;
+}
+
+a {
+    color: #4D4C4E !important;
+}
+
+mat-toolbar {
+    min-height: 30px;
+    height: 7vh;
+    background-color: #6f42c1;
+}
+
+.example-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.example-sidenav-content {
+    /* display: flex; */
+    height: 100%;
+    background-color: #282A3A;
+
+}
+
+.example-sidenav {
+    padding: 0 !important;
+    width: 300px;
+    background-color: #101820FF;
+}
+
+.profile-pic {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.profile-pic-1 {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.brand {
+    color: wheat;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    margin-top: 5px;
+}
+
+.box {
+    display: flex;
+    flex: auto;
+    flex-wrap: wrap;
+    align-content: space-between !important;
+    justify-content: space-between;
+
+}
+
+.logout {
+    margin-top: 10px;
+    cursor: pointer;
+    /* color:#282A3A; */
+}
+
+.logout:hover {
+    color: whitesmoke;
+}
+
+.menu:hover {
+    color: whitesmoke;
+}
+
+
+
+.profile-bar {
+    background-color: #6f42c1;
+    /* margin-right: 0; */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.break {
+    color: wheat !important;
+    background-color: wheat !important;
+    margin: 7px;
+}
+
+.users:hover {
+    background-color: #b9b9b9 !important;
+    color: #4D4C4E !important;
+}
+
+.usersLists {
+    height: 70vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.usersLists::-webkit-scrollbar {
+    width: 3px;
+    /* background-color: rebeccapurple; */
+}
+
+.usersLists::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #404258;
+}
+
+#usersList {
+    text-decoration: none;
+}
+
+.sidenav {
+    width: 100%;
+}
+
+.search {
+    margin-top: 10px;
+    text-align: center;
+    /* border: 1px solid green; */
+    /* position: sticky;
+    top: 50px;
+    z-index: 100; */
+}
+
+.search input {
+    width: 80%;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+    padding: 2px;
+    padding-left: 5px;
+    font-size: small;
+    height: 25px;
+    background-color: #282A3A;
+    color: wheat;
+    /* border: 1px solid yellow; */
+}
+
+.search button {
+    border-radius: 0px 5px 5px 0px;
+    height: 25.5px;
+    /* border: 1px solid red; */
+    position: relative;
+    top: 6.5px;
+    background-color: #282A3A;
+    border: none;
+    margin-left: 1px;
+    color: darkgray;
+}
+
+.search button:hover {
+    color: wheat;
+}
+
+.content {
+    background-color: #282A3A;
+    height: 93vh;
+}
+
+.is-active {
+    background-color: #282A3A !important;
+}
+
+.last-msg {
+    font-size: smaller;
+    font-weight: lighter;
+    color: darkgrey;
+    letter-spacing: 0.5px;
+}
+
+.option {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+.option:hover {
+    color: whitesmoke;
+}
+
+::ng-deep .mat-menu1 {
+    width: 200px !important;
+    margin-left: 10px;
+    background-color: darkgray;
+    color: black;
+}
+
+::ng-deep .mat-menu2 {
+    width: 200px !important;
+    margin-left: 30px;
+    background-color: darkgray;
+    color: black;
+}
+
+.sub-heading {
+    margin-left: 15px;
+}
